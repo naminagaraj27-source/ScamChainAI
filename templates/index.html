@@ -1,0 +1,3270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ScamChain AI | Intelligent Scam Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+    <div class="logo-area">
+
+        <div class="logo-icon">
+            🛡️
+        </div>
+
+        <div>
+
+            <div class="logo-text">
+                ScamChain <span>AI</span>
+            </div>
+
+            <small>
+                Intelligent Scam Detection
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <nav class="navbar">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#scanner">
+            Scam Scanner
+        </a>
+
+        <a href="#threats">
+            Threat Library
+        </a>
+
+        <a href="#how">
+            How It Works
+        </a>
+
+
+        <!-- LANGUAGE -->
+
+        <div class="language-box">
+
+            <span>
+                🌐
+            </span>
+
+            <select
+                id="websiteLanguage"
+                onchange="changeWebsiteLanguage(this.value)">
+
+                <option value="en">
+                    English
+                </option>
+
+                <option value="ta">
+                    தமிழ்
+                </option>
+
+                <option value="hi">
+                    हिन्दी
+                </option>
+
+                <option value="te">
+                    తెలుగు
+                </option>
+
+                <option value="ml">
+                    മലയാളം
+                </option>
+
+                <option value="kn">
+                    ಕನ್ನಡ
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- REPORT -->
+
+        <button
+            class="report-top-btn"
+            onclick="openReport()">
+
+            Report Scam
+
+        </button>
+
+
+        <!-- LOGIN -->
+
+        <button
+            class="login-top-btn"
+            onclick="openAuth()">
+
+            👤 Login
+
+        </button>
+
+
+        <!-- USER MENU -->
+
+        <div
+            id="userMenu"
+            class="user-menu"
+            style="display:none;">
+
+            <span>
+                👋
+                <strong id="loggedUserName"></strong>
+            </span>
+
+            <button onclick="openDashboard()">
+                📊 Dashboard
+            </button>
+
+            <button onclick="logoutUser()">
+                🚪 Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <button
+        class="mobile-menu"
+        onclick="toggleMobileMenu()">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+<!-- =========================================================
+     MOBILE MENU
+========================================================= -->
+
+<div
+    id="mobileNav"
+    class="mobile-nav">
+
+    <a href="#home">
+        Home
+    </a>
+
+    <a href="#scanner">
+        Scam Scanner
+    </a>
+
+    <a href="#threats">
+        Threat Library
+    </a>
+
+    <a href="#how">
+        How It Works
+    </a>
+
+    <button onclick="openReport()">
+        Report Scam
+    </button>
+
+</div>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+    id="home"
+    class="hero">
+
+    <div class="hero-left">
+
+        <div class="security-pill">
+
+            <span class="pulse"></span>
+
+            AI-POWERED DIGITAL PROTECTION
+
+        </div>
+
+
+        <h1>
+
+            Detect Scams.<br>
+
+            <span>
+                Protect What Matters.
+            </span>
+
+        </h1>
+
+
+        <p class="hero-text">
+
+            ScamChain AI helps analyze suspicious messages,
+            links, emails and payment requests to identify
+            potential scam indicators before you take action.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#scanner"
+                class="primary-btn">
+
+                🔍 Scan for Scam
+
+            </a>
+
+
+            <a
+                href="#how"
+                class="secondary-btn">
+
+                How It Works →
+
+            </a>
+
+        </div>
+
+
+        <div class="trust-row">
+
+            <div>
+
+                <strong>
+                    1250+
+                </strong>
+
+                <span>
+                    Scans
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    382+
+                </strong>
+
+                <span>
+                    Threats Detected
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    8
+                </strong>
+
+                <span>
+                    Scam Categories
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-right">
+
+        <div class="glow"></div>
+
+
+        <div class="cyber-card">
+
+            <div class="card-top">
+
+                <div>
+
+                    <small>
+                        SCAMCHAIN AI
+                    </small>
+
+                    <h3>
+                        Security Center
+                    </h3>
+
+                </div>
+
+
+                <div class="live-dot">
+                    ● LIVE
+                </div>
+
+            </div>
+
+
+            <div class="shield-large">
+
+                🛡️
+
+            </div>
+
+
+            <div class="security-status">
+
+                <div class="status-circle">
+
+                    ✓
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Protection Active
+                    </strong>
+
+                    <p>
+                        Real-time threat analysis
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="mini-lines">
+
+                <div>
+
+                    <span>
+                        Network
+                    </span>
+
+                    <b>
+                        Protected
+                    </b>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Threat Engine
+                    </span>
+
+                    <b>
+                        Active
+                    </b>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Monitoring
+                    </span>
+
+                    <b>
+                        24 / 7
+                    </b>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section class="stats-section">
+
+    <div class="stats-card">
+
+        <div class="stat-item">
+
+            <span class="stat-icon">
+                🔍
+            </span>
+
+            <div>
+
+                <strong id="totalScans">
+                    1250+
+                </strong>
+
+                <small>
+                    Total Scans
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-item">
+
+            <span class="stat-icon">
+                🚨
+            </span>
+
+            <div>
+
+                <strong id="threatsDetected">
+                    382+
+                </strong>
+
+                <small>
+                    Threats Detected
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-item">
+
+            <span class="stat-icon">
+                🧠
+            </span>
+
+            <div>
+
+                <strong>
+                    8
+                </strong>
+
+                <small>
+                    Threat Categories
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-item">
+
+            <span class="stat-icon">
+                🛡️
+            </span>
+
+            <div>
+
+                <strong>
+                    24/7
+                </strong>
+
+                <small>
+                    Security Awareness
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SCANNER
+========================================================= -->
+
+<section
+    id="scanner"
+    class="scanner-section">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            INTELLIGENT SCAM SCANNER
+        </div>
+
+        <h2>
+            Check Before You Click
+        </h2>
+
+        <p>
+            Analyze suspicious content and review
+            potential warning signs.
+        </p>
+
+    </div>
+
+
+    <div class="scanner-box">
+
+        <div class="scanner-tabs">
+
+            <button
+                class="scan-tab active"
+                data-type="message"
+                onclick="selectScanType(this)">
+
+                💬 Message
+
+            </button>
+
+
+            <button
+                class="scan-tab"
+                data-type="url"
+                onclick="selectScanType(this)">
+
+                🔗 URL
+
+            </button>
+
+
+            <button
+                class="scan-tab"
+                data-type="email"
+                onclick="selectScanType(this)">
+
+                📧 Email
+
+            </button>
+
+
+            <button
+                class="scan-tab"
+                data-type="phone"
+                onclick="selectScanType(this)">
+
+                📱 Phone
+
+            </button>
+
+
+            <button
+                class="scan-tab"
+                data-type="payment"
+                onclick="selectScanType(this)">
+
+                💳 Payment
+
+            </button>
+
+        </div>
+
+
+        <div class="scanner-input-area">
+
+            <label id="scannerLabel">
+
+                Paste a suspicious message
+
+            </label>
+
+
+            <textarea
+                id="scamInput"
+                placeholder="Example: Your bank account will be blocked. Verify OTP immediately..."
+            ></textarea>
+
+
+            <div class="scanner-actions">
+
+                <button
+                    class="clear-btn"
+                    onclick="clearScanner()">
+
+                    Clear
+
+                </button>
+
+
+                <button
+                    class="analyze-btn"
+                    onclick="analyzeScam()">
+
+                    <span>
+                        🤖
+                    </span>
+
+                    Analyze with AI
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div
+            id="resultBox"
+            class="result-box">
+
+            <div class="result-header">
+
+                <div>
+
+                    <small>
+                        SCAN RESULT
+                    </small>
+
+                    <h3 id="riskTitle">
+                        Risk Analysis
+                    </h3>
+
+                </div>
+
+
+                <div
+                    id="riskBadge"
+                    class="risk-badge">
+
+                    --
+
+                </div>
+
+            </div>
+
+
+            <div class="result-grid">
+
+                <div class="score-card">
+
+                    <div class="score-ring">
+
+                        <div>
+
+                            <strong id="riskScore">
+                                0
+                            </strong>
+
+                            <span>
+                                /100
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+                        Risk Score
+                    </p>
+
+                </div>
+
+
+                <div class="analysis-details">
+
+                    <div class="detail-row">
+
+                        <span>
+                            Threat Type
+                        </span>
+
+                        <strong id="threatType">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Assessment
+                        </span>
+
+                        <strong id="assessment">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-columns">
+
+                <div>
+
+                    <h4>
+                        ⚠️ Warning Signs
+                    </h4>
+
+                    <ul id="signalsList">
+                    </ul>
+
+                </div>
+
+
+                <div>
+
+                    <h4>
+                        🛡️ Recommended Actions
+                    </h4>
+
+                    <ul id="recommendationList">
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     THREAT LIBRARY
+========================================================= -->
+
+<section
+    id="threats"
+    class="threat-section">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            THREAT LIBRARY
+        </div>
+
+        <h2>
+            Know the Scams
+        </h2>
+
+        <p>
+            Click a scam category to learn how it works,
+            warning signs and how to stay safe.
+        </p>
+
+    </div>
+
+
+    <div class="threat-grid">
+
+        <div
+            class="threat-card"
+            onclick="openThreat('banking')">
+
+            <div class="threat-icon">
+                🏦
+            </div>
+
+            <h3>
+                Banking Scams
+            </h3>
+
+            <p>
+                Fake bank messages and calls.
+            </p>
+
+            <span class="learn-more">
+                Learn More →
+            </span>
+
+        </div>
+
+
+        <div
+            class="threat-card"
+            onclick="openThreat('phishing')">
+
+            <div class="threat-icon">
+                🔗
+            </div>
+
+            <h3>
+                Phishing
+            </h3>
+
+            <p>
+                Fake links and websites.
+            </p>
+
+            <span class="learn-more">
+                Learn More →
+            </span>
+
+        </div>
+
+
+        <div
+            class="threat-card"
+            onclick="openThreat('job')">
+
+            <div class="threat-icon">
+                💼
+            </div>
+
+            <h3>
+                Job Scams
+            </h3>
+
+            <p>
+                Fake job offers and recruitment.
+            </p>
+
+            <span class="learn-more">
+                Learn More →
+            </span>
+
+        </div>
+
+
+        <div
+            class="threat-card"
+            onclick="openThreat('investment')">
+
+            <div class="threat-icon">
+                📈
+            </div>
+
+            <h3>
+                Investment Scams
+            </h3>
+
+            <p>
+                Fake profits and investment schemes.
+            </p>
+
+            <span class="learn-more">
+                Learn More →
+            </span>
+
+        </div>
+
+
+        <div
+            class="threat-card"
+            onclick="openThreat('lottery')">
+
+            <div class="threat-icon">
+                🎁
+            </div>
+
+            <h3>
+                Lottery Scams
+            </h3>
+
+            <p>
+                Fake prizes and reward messages.
+            </p>
+
+            <span class="learn-more">
+                Learn More →
+            </span>
+
+        </div>
+
+
+        <div
+            class="threat-card"
+            onclick="openThreat('upi')">
+
+            <div class="threat-icon">
+                💳
+            </div>
+
+            <h3>
+                UPI / Payment Scams
+            </h3>
+
+            <p>
+                Fake payment requests.
+            </p>
+
+            <span class="learn-more">
+                Learn More →
+            </span>
+
+        </div>
+
+
+        <div
+            class="threat-card"
+            onclick="openThreat('social')">
+
+            <div class="threat-icon">
+                📱
+            </div>
+
+            <h3>
+                Social Media Scams
+            </h3>
+
+            <p>
+                Fake accounts, offers and messages.
+            </p>
+
+            <span class="learn-more">
+                Learn More →
+            </span>
+
+        </div>
+
+
+        <div
+            class="threat-card"
+            onclick="openThreat('shopping')">
+
+            <div class="threat-icon">
+                🛒
+            </div>
+
+            <h3>
+                Shopping Scams
+            </h3>
+
+            <p>
+                Fake online stores and deals.
+            </p>
+
+            <span class="learn-more">
+                Learn More →
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     HOW IT WORKS
+========================================================= -->
+
+<section
+    id="how"
+    class="how-section">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            SIMPLE PROCESS
+        </div>
+
+        <h2>
+            How ScamChain AI Works
+        </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>
+                Paste Content
+            </h3>
+
+            <p>
+                Add the suspicious message,
+                URL, email, phone or payment text.
+            </p>
+
+        </div>
+
+
+        <div class="step-line"></div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>
+                Analyze
+            </h3>
+
+            <p>
+                ScamChain AI checks the content
+                against multiple warning indicators.
+            </p>
+
+        </div>
+
+
+        <div class="step-line"></div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>
+                Take Action
+            </h3>
+
+            <p>
+                Review the risk score, warning signs
+                and recommended precautions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section class="faq-section">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            FAQ
+        </div>
+
+        <h2>
+            Frequently Asked Questions
+        </h2>
+
+    </div>
+
+
+    <div class="faq-list">
+
+        <div class="faq-item">
+
+            <button onclick="toggleFAQ(this)">
+
+                Is ScamChain AI always accurate?
+
+                <span>
+                    +
+                </span>
+
+            </button>
+
+
+            <p>
+
+                No automated checker can guarantee a correct
+                result. Use scan results as warning signals
+                and verify important requests independently.
+
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button onclick="toggleFAQ(this)">
+
+                Should I share my OTP?
+
+                <span>
+                    +
+                </span>
+
+            </button>
+
+
+            <p>
+
+                Never share OTPs, passwords, PINs or CVVs
+                with people who ask for them through
+                suspicious messages or calls.
+
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button onclick="toggleFAQ(this)">
+
+                Can I report a suspected scam?
+
+                <span>
+                    +
+                </span>
+
+            </button>
+
+
+            <p>
+
+                Yes. Use the Report Scam button to submit
+                information about suspicious activity.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     REPORT MODAL
+========================================================= -->
+
+<div
+    id="reportModal"
+    class="modal">
+
+    <div class="modal-content">
+
+        <button
+            class="close-modal"
+            onclick="closeReport()">
+
+            ×
+
+        </button>
+
+
+        <div class="modal-icon">
+            🚨
+        </div>
+
+
+        <h2>
+            Report a Scam
+        </h2>
+
+
+        <p>
+
+            Help identify suspicious activity
+            by submitting a report.
+
+        </p>
+
+
+        <input
+            type="text"
+            id="reportName"
+            placeholder="Your name">
+
+
+        <input
+            type="email"
+            id="reportEmail"
+            placeholder="Email address">
+
+
+        <select id="reportCategory">
+
+            <option value="">
+                Select scam category
+            </option>
+
+            <option>
+                Phishing
+            </option>
+
+            <option>
+                Banking Scam
+            </option>
+
+            <option>
+                UPI / Payment Scam
+            </option>
+
+            <option>
+                Investment Scam
+            </option>
+
+            <option>
+                Job Scam
+            </option>
+
+            <option>
+                Lottery Scam
+            </option>
+
+            <option>
+                Shopping Scam
+            </option>
+
+            <option>
+                Social Media Scam
+            </option>
+
+        </select>
+
+
+        <textarea
+            id="reportDescription"
+            placeholder="Describe the suspicious activity..."
+        ></textarea>
+
+
+        <button
+            class="submit-report"
+            onclick="submitReport()">
+
+            Submit Report
+
+        </button>
+
+
+        <div id="reportMessage"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     THREAT DETAILS MODAL
+========================================================= -->
+
+<div
+    id="threatModal"
+    class="modal">
+
+    <div
+        class="modal-content threat-modal">
+
+        <button
+            class="close-modal"
+            onclick="closeThreat()">
+
+            ×
+
+        </button>
+
+
+        <div
+            id="threatModalIcon"
+            class="modal-icon">
+
+            🛡️
+
+        </div>
+
+
+        <h2 id="threatModalTitle">
+            Scam Details
+        </h2>
+
+
+        <p id="threatModalDescription">
+        </p>
+
+
+        <div class="threat-detail-box">
+
+            <h4>
+                ⚠️ Common Warning Signs
+            </h4>
+
+            <ul id="threatWarningList">
+            </ul>
+
+        </div>
+
+
+        <div class="threat-detail-box">
+
+            <h4>
+                🛡️ How to Stay Safe
+            </h4>
+
+            <ul id="threatSafetyList">
+            </ul>
+
+        </div>
+
+
+        <button
+            class="scan-this-btn"
+            onclick="goToScanner()">
+
+            🔍 Scan Something Suspicious
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     AUTH MODAL
+========================================================= -->
+
+<div
+    id="authModal"
+    class="modal">
+
+    <div class="modal-content">
+
+        <button
+            class="close-modal"
+            onclick="closeAuth()">
+
+            ×
+
+        </button>
+
+
+        <div class="modal-icon">
+            🔐
+        </div>
+
+
+        <h2 id="authTitle">
+            Login
+        </h2>
+
+
+        <p id="authSubtitle">
+
+            Login to access your ScamChain AI dashboard.
+
+        </p>
+
+
+        <div
+            id="signupNameBox"
+            style="display:none;">
+
+            <input
+                type="text"
+                id="authName"
+                placeholder="Full Name">
+
+        </div>
+
+
+        <input
+            type="email"
+            id="authEmail"
+            placeholder="Email Address">
+
+
+        <input
+            type="password"
+            id="authPassword"
+            placeholder="Password">
+
+
+        <button
+            class="submit-report"
+            id="authSubmitBtn"
+            onclick="submitAuth()">
+
+            Login
+
+        </button>
+
+
+        <p
+            id="authMessage"
+            class="auth-message">
+
+        </p>
+
+
+        <button
+            class="switch-auth"
+            id="switchAuthBtn"
+            onclick="switchAuthMode()">
+
+            Create a new account
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     DASHBOARD MODAL
+========================================================= -->
+
+<div
+    id="dashboardModal"
+    class="modal">
+
+    <div
+        class="modal-content dashboard-modal">
+
+        <button
+            class="close-modal"
+            onclick="closeDashboard()">
+
+            ×
+
+        </button>
+
+
+        <div class="modal-icon">
+            📊
+        </div>
+
+
+        <h2>
+            My Dashboard
+        </h2>
+
+
+        <p>
+            Your ScamChain AI activity.
+        </p>
+
+
+        <div class="dashboard-stats">
+
+            <div class="dashboard-stat">
+
+                <strong id="dashTotalScans">
+                    0
+                </strong>
+
+                <span>
+                    Total Scans
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-stat">
+
+                <strong id="dashHighRisk">
+                    0
+                </strong>
+
+                <span>
+                    High Risk
+                </span>
+
+            </div>
+
+
+            <div class="dashboard-stat">
+
+                <strong id="dashSuspicious">
+                    0
+                </strong>
+
+                <span>
+                    Suspicious
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="history-title-row">
+
+            <h3>
+                Recent Scan History
+            </h3>
+
+
+            <button onclick="downloadHistory()">
+
+                📥 CSV
+
+            </button>
+
+        </div>
+
+
+        <div id="historyContainer">
+
+            <p class="empty-history">
+
+                No scans yet.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <div class="footer-logo">
+
+                🛡️ ScamChain <span>AI</span>
+
+            </div>
+
+
+            <p>
+
+                Intelligent tools for scam awareness
+                and digital safety.
+
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Platform
+            </h4>
+
+            <a href="#scanner">
+                Scam Scanner
+            </a>
+
+            <a href="#threats">
+                Threat Library
+            </a>
+
+            <a href="#how">
+                How It Works
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Safety
+            </h4>
+
+            <a href="#scanner">
+                Check a Message
+            </a>
+
+            <a
+                href="#"
+                onclick="openReport(); return false;">
+
+                Report Scam
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 ScamChain AI · Stay alert. Stay protected.
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     AI ASSISTANT BUTTON
+========================================================= -->
+
+<button
+    id="aiButton"
+    type="button"
+    onclick="toggleAI()"
+    style="
+        position:fixed;
+        right:25px;
+        bottom:25px;
+        z-index:99999;
+        border:none;
+        border-radius:30px;
+        padding:15px 22px;
+        background:#2563eb;
+        color:#fff;
+        font-size:16px;
+        font-weight:700;
+        cursor:pointer;
+        box-shadow:0 10px 30px rgba(0,0,0,.4);
+    ">
+
+    🤖 AI Assistant
+
+</button>
+
+
+<!-- =========================================================
+     AI BOX
+========================================================= -->
+
+<div
+    id="aiBox"
+    style="
+        display:none;
+        position:fixed;
+        right:25px;
+        bottom:85px;
+        width:380px;
+        max-width:90vw;
+        height:560px;
+        z-index:100000;
+        background:#0f172a;
+        color:white;
+        border-radius:20px;
+        overflow:hidden;
+        box-shadow:0 20px 60px rgba(0,0,0,.6);
+        border:1px solid #334155;
+    ">
+
+
+    <!-- AI HEADER -->
+
+    <div
+        style="
+            padding:18px;
+            background:#111827;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        ">
+
+        <div>
+
+            <div
+                style="
+                    font-size:18px;
+                    font-weight:700;
+                ">
+
+                🤖 ScamChain AI
+
+            </div>
+
+
+            <small
+                id="aiLanguage"
+                style="
+                    color:#94a3b8;
+                ">
+
+                English
+
+            </small>
+
+        </div>
+
+
+        <button
+            type="button"
+            onclick="toggleAI()"
+            style="
+                border:none;
+                background:none;
+                color:white;
+                font-size:22px;
+                cursor:pointer;
+            ">
+
+            ✕
+
+        </button>
+
+    </div>
+
+
+    <!-- AI CHAT -->
+
+    <div
+        id="aiChat"
+        style="
+            height:390px;
+            overflow-y:auto;
+            padding:15px;
+        ">
+
+        <div
+            id="aiWelcome"
+            style="
+                background:#1e293b;
+                padding:12px;
+                border-radius:12px;
+                margin-bottom:10px;
+            ">
+
+            👋 Hi! I am ScamChain AI.
+
+            <br><br>
+
+            ⌨ Type your question or 🎤 speak your question.
+
+        </div>
+
+    </div>
+
+
+    <!-- AI INPUT -->
+
+    <div
+        style="
+            display:flex;
+            gap:7px;
+            padding:10px;
+            background:#111827;
+        ">
+
+        <textarea
+            id="aiInput"
+            rows="2"
+            placeholder="Type your question..."
+            style="
+                flex:1;
+                resize:none;
+                border:1px solid #475569;
+                border-radius:10px;
+                padding:10px;
+                background:#0f172a;
+                color:white;
+                outline:none;
+            "></textarea>
+
+
+        <!-- MIC -->
+
+        <button
+            id="aiMic"
+            type="button"
+            onclick="startAISpeech()"
+            title="Speak"
+            style="
+                width:45px;
+                border:none;
+                border-radius:10px;
+                background:#334155;
+                color:white;
+                font-size:20px;
+                cursor:pointer;
+            ">
+
+            🎤
+
+        </button>
+
+
+        <!-- SEND -->
+
+        <button
+            type="button"
+            onclick="sendAI()"
+            title="Send"
+            style="
+                width:45px;
+                border:none;
+                border-radius:10px;
+                background:#2563eb;
+                color:white;
+                font-size:20px;
+                cursor:pointer;
+            ">
+
+            ➤
+
+        </button>
+
+    </div>
+
+
+    <!-- SPEAK -->
+
+    <button
+        id="aiSpeakButton"
+        type="button"
+        onclick="speakAnswer()"
+        style="
+            margin:10px;
+            width:calc(100% - 20px);
+            padding:10px;
+            border:none;
+            border-radius:10px;
+            background:#334155;
+            color:white;
+            cursor:pointer;
+        ">
+
+        🔊 Speak Answer
+
+    </button>
+
+</div>
+
+
+<!-- =========================================================
+     EXISTING WEBSITE JAVASCRIPT
+========================================================= -->
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<script src="{{ url_for('static', filename='language.js') }}"></script>
+
+
+<!-- =========================================================
+     MULTILINGUAL AI JAVASCRIPT
+========================================================= -->
+
+<script>
+
+let lastAIAnswer = "";
+
+let lastAIAnswerLanguage = "en";
+
+let aiRecognition = null;
+
+
+/* =========================================================
+   LANGUAGE SETTINGS
+========================================================= */
+
+const AI_LANGUAGES = {
+
+    en: {
+        name: "English",
+        speech: "en-IN",
+        placeholder: "Type your question...",
+        listening: "🎤 Listening...",
+        thinking: "🤖 Thinking...",
+        empty: "Please type or speak your question.",
+        welcome: "👋 Hi! I am ScamChain AI.<br><br>⌨ Type your question or 🎤 speak your question.",
+        noVoice: "English voice is not available."
+    },
+
+
+    ta: {
+        name: "தமிழ்",
+        speech: "ta-IN",
+        placeholder: "உங்கள் கேள்வியை எழுதுங்கள்...",
+        listening: "🎤 கேட்கிறேன்...",
+        thinking: "🤖 யோசிக்கிறேன்...",
+        empty: "உங்கள் கேள்வியை எழுதுங்கள் அல்லது பேசுங்கள்.",
+        welcome: "👋 வணக்கம்! நான் ScamChain AI.<br><br>⌨ உங்கள் கேள்வியை எழுதுங்கள் அல்லது 🎤 பேசுங்கள்.",
+        noVoice: "தமிழ் குரல் Chrome-ல் கிடைக்கவில்லை."
+    },
+
+
+    hi: {
+        name: "हिन्दी",
+        speech: "hi-IN",
+        placeholder: "अपना सवाल लिखें...",
+        listening: "🎤 सुन रहा हूँ...",
+        thinking: "🤖 सोच रहा हूँ...",
+        empty: "कृपया अपना सवाल लिखें या बोलें।",
+        welcome: "👋 नमस्ते! मैं ScamChain AI हूँ।<br><br>⌨ अपना सवाल लिखें या 🎤 बोलें।",
+        noVoice: "हिन्दी की आवाज़ Chrome में उपलब्ध नहीं है।"
+    },
+
+
+    te: {
+        name: "తెలుగు",
+        speech: "te-IN",
+        placeholder: "మీ ప్రశ్నను టైప్ చేయండి...",
+        listening: "🎤 వింటున్నాను...",
+        thinking: "🤖 ఆలోచిస్తున్నాను...",
+        empty: "దయచేసి మీ ప్రశ్నను టైప్ చేయండి లేదా మాట్లాడండి.",
+        welcome: "👋 నమస్కారం! నేను ScamChain AI.<br><br>⌨ మీ ప్రశ్నను టైప్ చేయండి లేదా 🎤 మాట్లాడండి.",
+        noVoice: "తెలుగు voice Chrome-లో అందుబాటులో లేదు."
+    },
+
+
+    ml: {
+        name: "മലയാളം",
+        speech: "ml-IN",
+        placeholder: "നിങ്ങളുടെ ചോദ്യം ടൈപ്പ് ചെയ്യുക...",
+        listening: "🎤 കേൾക്കുന്നു...",
+        thinking: "🤖 ചിന്തിക്കുന്നു...",
+        empty: "ദയവായി നിങ്ങളുടെ ചോദ്യം ടൈപ്പ് ചെയ്യുക അല്ലെങ്കിൽ സംസാരിക്കുക.",
+        welcome: "👋 നമസ്കാരം! ഞാൻ ScamChain AI ആണ്.<br><br>⌨ നിങ്ങളുടെ ചോദ്യം ടൈപ്പ് ചെയ്യുക അല്ലെങ്കിൽ 🎤 സംസാരിക്കുക.",
+        noVoice: "മലയാളം voice Chrome-ൽ ലഭ്യമല്ല."
+    },
+
+
+    kn: {
+        name: "ಕನ್ನಡ",
+        speech: "kn-IN",
+        placeholder: "ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಟೈಪ್ ಮಾಡಿ...",
+        listening: "🎤 ಕೇಳುತ್ತಿದ್ದೇನೆ...",
+        thinking: "🤖 ಯೋಚಿಸುತ್ತಿದ್ದೇನೆ...",
+        empty: "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಟೈಪ್ ಮಾಡಿ ಅಥವಾ ಮಾತನಾಡಿ.",
+        welcome: "👋 ನಮಸ್ಕಾರ! ನಾನು ScamChain AI.<br><br>⌨ ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಟೈಪ್ ಮಾಡಿ ಅಥವಾ 🎤 ಮಾತನಾಡಿ.",
+        noVoice: "ಕನ್ನಡ voice Chrome ನಲ್ಲಿ ಲಭ್ಯವಿಲ್ಲ."
+    }
+
+};
+
+
+/* =========================================================
+   GET LANGUAGE
+========================================================= */
+
+function getAILanguage() {
+
+    const selector =
+        document.getElementById(
+            "websiteLanguage"
+        );
+
+
+    const language =
+        selector
+            ? selector.value
+            : "en";
+
+
+    return AI_LANGUAGES[language]
+        ? language
+        : "en";
+
+}
+
+
+/* =========================================================
+   UPDATE AI UI
+========================================================= */
+
+function updateAIInterface() {
+
+    const language =
+        getAILanguage();
+
+
+    const config =
+        AI_LANGUAGES[language];
+
+
+    const label =
+        document.getElementById(
+            "aiLanguage"
+        );
+
+
+    const input =
+        document.getElementById(
+            "aiInput"
+        );
+
+
+    const welcome =
+        document.getElementById(
+            "aiWelcome"
+        );
+
+
+    if (label) {
+
+        label.innerText =
+            config.name;
+
+    }
+
+
+    if (input) {
+
+        input.placeholder =
+            config.placeholder;
+
+        input.lang =
+            config.speech;
+
+    }
+
+
+    if (welcome) {
+
+        welcome.innerHTML =
+            config.welcome;
+
+    }
+
+}
+
+
+/* =========================================================
+   OPEN / CLOSE AI
+========================================================= */
+
+function toggleAI() {
+
+    const box =
+        document.getElementById(
+            "aiBox"
+        );
+
+
+    if (!box) {
+
+        return;
+
+    }
+
+
+    if (
+        box.style.display === "none" ||
+        box.style.display === ""
+    ) {
+
+        box.style.display =
+            "block";
+
+        updateAIInterface();
+
+    } else {
+
+        box.style.display =
+            "none";
+
+        stopAISpeech();
+
+        stopOutputVoice();
+
+    }
+
+}
+
+
+/* =========================================================
+   VOICE INPUT
+========================================================= */
+
+function startAISpeech() {
+
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+
+    if (!SpeechRecognition) {
+
+        alert(
+            "Google Chrome voice input is required."
+        );
+
+        return;
+
+    }
+
+
+    stopAISpeech();
+
+
+    const language =
+        getAILanguage();
+
+
+    const config =
+        AI_LANGUAGES[language];
+
+
+    const recognition =
+        new SpeechRecognition();
+
+
+    aiRecognition =
+        recognition;
+
+
+    recognition.lang =
+        config.speech;
+
+
+    recognition.continuous =
+        false;
+
+
+    recognition.interimResults =
+        false;
+
+
+    recognition.maxAlternatives =
+        1;
+
+
+    const input =
+        document.getElementById(
+            "aiInput"
+        );
+
+
+    const mic =
+        document.getElementById(
+            "aiMic"
+        );
+
+
+    if (input) {
+
+        input.placeholder =
+            config.listening;
+
+    }
+
+
+    if (mic) {
+
+        mic.innerText =
+            "🔴";
+
+    }
+
+
+    recognition.onresult =
+        function(event) {
+
+            const text =
+                event
+                    .results[0][0]
+                    .transcript;
+
+
+            if (input) {
+
+                input.value =
+                    text;
+
+                input.placeholder =
+                    config.placeholder;
+
+                input.focus();
+
+            }
+
+        };
+
+
+    recognition.onerror =
+        function(event) {
+
+            console.log(
+                "Voice input error:",
+                event.error
+            );
+
+
+            if (input) {
+
+                input.placeholder =
+                    config.placeholder;
+
+            }
+
+
+            if (mic) {
+
+                mic.innerText =
+                    "🎤";
+
+            }
+
+        };
+
+
+    recognition.onend =
+        function() {
+
+            if (input) {
+
+                input.placeholder =
+                    config.placeholder;
+
+            }
+
+
+            if (mic) {
+
+                mic.innerText =
+                    "🎤";
+
+            }
+
+
+            aiRecognition =
+                null;
+
+        };
+
+
+    try {
+
+        recognition.start();
+
+    } catch (error) {
+
+        console.log(
+            error
+        );
+
+        aiRecognition =
+            null;
+
+        if (mic) {
+
+            mic.innerText =
+                "🎤";
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   STOP VOICE INPUT
+========================================================= */
+
+function stopAISpeech() {
+
+    if (aiRecognition) {
+
+        try {
+
+            aiRecognition.stop();
+
+        } catch (error) {
+
+            console.log(
+                error
+            );
+
+        }
+
+        aiRecognition =
+            null;
+
+    }
+
+}
+
+
+/* =========================================================
+   SEND QUESTION TO GEMINI
+========================================================= */
+
+async function sendAI() {
+
+    const input =
+        document.getElementById(
+            "aiInput"
+        );
+
+
+    const chat =
+        document.getElementById(
+            "aiChat"
+        );
+
+
+    if (!input || !chat) {
+
+        return;
+
+    }
+
+
+    const question =
+        input.value.trim();
+
+
+    const language =
+        getAILanguage();
+
+
+    const config =
+        AI_LANGUAGES[language];
+
+
+    if (!question) {
+
+        alert(
+            config.empty
+        );
+
+        return;
+
+    }
+
+
+    /* USER MESSAGE */
+
+    const userMessage =
+        document.createElement(
+            "div"
+        );
+
+
+    userMessage.style.cssText = `
+        background:#2563eb;
+        color:white;
+        padding:10px 12px;
+        border-radius:12px;
+        margin:10px 0 10px auto;
+        max-width:82%;
+        word-wrap:break-word;
+        white-space:pre-wrap;
+    `;
+
+
+    userMessage.innerText =
+        question;
+
+
+    chat.appendChild(
+        userMessage
+    );
+
+
+    input.value =
+        "";
+
+
+    /* THINKING */
+
+    const aiMessage =
+        document.createElement(
+            "div"
+        );
+
+
+    aiMessage.style.cssText = `
+        background:#1e293b;
+        color:white;
+        padding:10px 12px;
+        border-radius:12px;
+        margin:10px 0;
+        max-width:88%;
+        word-wrap:break-word;
+        white-space:pre-wrap;
+    `;
+
+
+    aiMessage.innerText =
+        config.thinking;
+
+
+    chat.appendChild(
+        aiMessage
+    );
+
+
+    chat.scrollTop =
+        chat.scrollHeight;
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/assistant",
+                {
+                    method:
+                        "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            question:
+                                question,
+
+                            language:
+                                language
+
+                        })
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            response.ok &&
+            data.success &&
+            data.answer
+        ) {
+
+            lastAIAnswer =
+                data.answer;
+
+
+            lastAIAnswerLanguage =
+                data.language ||
+                language;
+
+
+            aiMessage.innerText =
+                "🤖 " +
+                data.answer;
+
+
+            chat.scrollTop =
+                chat.scrollHeight;
+
+        } else {
+
+            aiMessage.innerText =
+                "❌ " +
+                (
+                    data.error ||
+                    "AI could not answer."
+                );
+
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "AI ERROR:",
+            error
+        );
+
+
+        aiMessage.innerText =
+            "❌ " +
+            connectionError(
+                language
+            );
+
+    }
+
+
+    chat.scrollTop =
+        chat.scrollHeight;
+
+}
+
+
+/* =========================================================
+   CONNECTION ERROR
+========================================================= */
+
+function connectionError(language) {
+
+    const messages = {
+
+        en:
+            "Cannot connect to AI server.",
+
+        ta:
+            "AI server-ஐ இணைக்க முடியவில்லை.",
+
+        hi:
+            "AI server से कनेक्ट नहीं हो पा रहा है।",
+
+        te:
+            "AI serverకి కనెక్ట్ అవ్వడం సాధ్యం కాలేదు.",
+
+        ml:
+            "AI server-ലേക്ക് കണക്റ്റ് ചെയ്യാൻ കഴിയുന്നില്ല.",
+
+        kn:
+            "AI server ಗೆ ಸಂಪರ್ಕಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
+
+    };
+
+
+    return (
+        messages[language] ||
+        messages.en
+    );
+
+}
+
+
+/* =========================================================
+   VOICE OUTPUT SYSTEM
+========================================================= */
+
+let aiGoogleAudio = null;
+
+let aiGooglePlaying = false;
+
+
+function getOutputLanguage(language) {
+
+    const map = {
+
+        en: "en",
+
+        ta: "ta",
+
+        hi: "hi",
+
+        te: "te",
+
+        ml: "ml",
+
+        kn: "kn"
+
+    };
+
+
+    return map[language] || "en";
+
+}
+
+
+/* =========================================================
+   STOP OUTPUT VOICE
+========================================================= */
+
+function stopOutputVoice() {
+
+    try {
+
+        if ("speechSynthesis" in window) {
+
+            window.speechSynthesis.cancel();
+
+        }
+
+    } catch (error) {
+
+        console.log(
+            error
+        );
+
+    }
+
+
+    aiGooglePlaying =
+        false;
+
+
+    if (aiGoogleAudio) {
+
+        try {
+
+            aiGoogleAudio.pause();
+
+            aiGoogleAudio.removeAttribute(
+                "src"
+            );
+
+            aiGoogleAudio.load();
+
+        } catch (error) {
+
+            console.log(
+                error
+            );
+
+        }
+
+        aiGoogleAudio =
+            null;
+
+    }
+
+}
+
+
+/* =========================================================
+   FIND LANGUAGE VOICE
+========================================================= */
+
+function findLanguageVoice(language) {
+
+    if (
+        !("speechSynthesis" in window)
+    ) {
+
+        return null;
+
+    }
+
+
+    const code =
+        getOutputLanguage(
+            language
+        ).toLowerCase();
+
+
+    const voices =
+        window.speechSynthesis
+            .getVoices();
+
+
+    if (
+        !voices ||
+        !voices.length
+    ) {
+
+        return null;
+
+    }
+
+
+    let voice =
+        voices.find(
+            function(item) {
+
+                return (
+                    item.lang &&
+                    item.lang
+                        .toLowerCase()
+                        .startsWith(code)
+                );
+
+            }
+        );
+
+
+    return voice || null;
+
+}
+
+
+/* =========================================================
+   BROWSER SPEECH
+========================================================= */
+
+function speakText(
+    text,
+    language
+) {
+
+    if (!text) {
+
+        return false;
+
+    }
+
+
+    const voice =
+        findLanguageVoice(
+            language
+        );
+
+
+    if (!voice) {
+
+        return false;
+
+    }
+
+
+    try {
+
+        stopOutputVoice();
+
+
+        const speech =
+            new SpeechSynthesisUtterance(
+                String(text)
+            );
+
+
+        speech.voice =
+            voice;
+
+
+        speech.lang =
+            voice.lang;
+
+
+        speech.rate =
+            0.9;
+
+
+        speech.pitch =
+            1;
+
+
+        speech.volume =
+            1;
+
+
+        window.speechSynthesis.speak(
+            speech
+        );
+
+
+        return true;
+
+    } catch (error) {
+
+        console.log(
+            "Browser TTS error:",
+            error
+        );
+
+        return false;
+
+    }
+
+}
+
+
+/* =========================================================
+   GOOGLE ONLINE TTS
+========================================================= */
+
+function speakWithGoogleTTS(
+    text,
+    language
+) {
+
+    if (!text) {
+
+        return;
+
+    }
+
+
+    stopOutputVoice();
+
+
+    const lang =
+        getOutputLanguage(
+            language
+        );
+
+
+    const chunks =
+        splitTextForVoice(
+            String(text),
+            140
+        );
+
+
+    if (!chunks.length) {
+
+        return;
+
+    }
+
+
+    aiGooglePlaying =
+        true;
+
+
+    let index =
+        0;
+
+
+    const button =
+        document.getElementById(
+            "aiSpeakButton"
+        );
+
+
+    if (button) {
+
+        button.innerText =
+            "🔊 Playing...";
+
+    }
+
+
+    function playNext() {
+
+        if (
+            !aiGooglePlaying ||
+            index >= chunks.length
+        ) {
+
+            aiGooglePlaying =
+                false;
+
+
+            aiGoogleAudio =
+                null;
+
+
+            if (button) {
+
+                button.innerText =
+                    "🔊 Speak Answer";
+
+            }
+
+
+            return;
+
+        }
+
+
+        const chunk =
+            chunks[index++];
+
+
+        const audio =
+            new Audio();
+
+
+        aiGoogleAudio =
+            audio;
+
+
+        const url =
+            "https://translate.googleapis.com/translate_tts"
+            +
+            "?client=gtx"
+            +
+            "&ie=UTF-8"
+            +
+            "&tl="
+            +
+            encodeURIComponent(
+                lang
+            )
+            +
+            "&q="
+            +
+            encodeURIComponent(
+                chunk
+            );
+
+
+        audio.preload =
+            "auto";
+
+
+        audio.src =
+            url;
+
+
+        audio.onended =
+            function() {
+
+                playNext();
+
+            };
+
+
+        audio.onerror =
+            function(error) {
+
+                console.log(
+                    "Google TTS error:",
+                    error
+                );
+
+
+                aiGooglePlaying =
+                    false;
+
+
+                aiGoogleAudio =
+                    null;
+
+
+                if (button) {
+
+                    button.innerText =
+                        "🔊 Speak Answer";
+
+                }
+
+            };
+
+
+        audio.play()
+            .catch(
+                function(error) {
+
+                    console.log(
+                        "Google TTS playback blocked:",
+                        error
+                    );
+
+
+                    aiGooglePlaying =
+                        false;
+
+
+                    const chat =
+                        document.getElementById(
+                            "aiChat"
+                        );
+
+
+                    if (chat) {
+
+                        const oldPlayer =
+                            document.getElementById(
+                                "aiVoicePlayer"
+                            );
+
+
+                        if (oldPlayer) {
+
+                            oldPlayer.remove();
+
+                        }
+
+
+                        audio.id =
+                            "aiVoicePlayer";
+
+
+                        audio.controls =
+                            true;
+
+
+                        audio.style.width =
+                            "100%";
+
+
+                        audio.style.marginTop =
+                            "10px";
+
+
+                        chat.appendChild(
+                            audio
+                        );
+
+
+                        chat.scrollTop =
+                            chat.scrollHeight;
+
+                    }
+
+
+                    if (button) {
+
+                        button.innerText =
+                            "▶ Play Voice";
+
+                    }
+
+                }
+            );
+
+    }
+
+
+    playNext();
+
+}
+
+
+/* =========================================================
+   SPLIT LONG TEXT
+========================================================= */
+
+function splitTextForVoice(
+    text,
+    maxLength
+) {
+
+    const cleanText =
+        String(text)
+            .replace(
+                /\s+/g,
+                " "
+            )
+            .trim();
+
+
+    if (!cleanText) {
+
+        return [];
+
+    }
+
+
+    const words =
+        cleanText.split(" ");
+
+
+    const chunks =
+        [];
+
+
+    let current =
+        "";
+
+
+    words.forEach(
+        function(word) {
+
+            const candidate =
+                current
+                    ? current + " " + word
+                    : word;
+
+
+            if (
+                candidate.length >
+                maxLength
+            ) {
+
+                if (current) {
+
+                    chunks.push(
+                        current
+                    );
+
+                }
+
+
+                current =
+                    word;
+
+            } else {
+
+                current =
+                    candidate;
+
+            }
+
+        }
+    );
+
+
+    if (current) {
+
+        chunks.push(
+            current
+        );
+
+    }
+
+
+    return chunks;
+
+}
+
+
+/* =========================================================
+   SPEAK LAST AI ANSWER
+========================================================= */
+
+function speakAnswer() {
+
+    if (!lastAIAnswer) {
+
+        const language =
+            getAILanguage();
+
+
+        const config =
+            AI_LANGUAGES[
+                language
+            ];
+
+
+        alert(
+            config
+                ? config.empty
+                : "Please ask a question."
+        );
+
+
+        return;
+
+    }
+
+
+    const language =
+        getAILanguage();
+
+
+    /* FIRST TRY INSTALLED CHROME / WINDOWS VOICE */
+
+    if (
+        speakText(
+            lastAIAnswer,
+            language
+        )
+    ) {
+
+        const button =
+            document.getElementById(
+                "aiSpeakButton"
+            );
+
+
+        if (button) {
+
+            button.innerText =
+                "🔊 Playing...";
+
+
+            setTimeout(
+                function() {
+
+                    button.innerText =
+                        "🔊 Speak Answer";
+
+                },
+                1500
+            );
+
+        }
+
+
+        return;
+
+    }
+
+
+    /* FALLBACK: ONLINE TTS */
+
+    speakWithGoogleTTS(
+        lastAIAnswer,
+        language
+    );
+
+}
+
+
+/* =========================================================
+   LOAD AVAILABLE VOICES
+========================================================= */
+
+if (
+    "speechSynthesis" in window
+) {
+
+    window.speechSynthesis.onvoiceschanged =
+        function() {
+
+            window.speechSynthesis
+                .getVoices();
+
+        };
+
+}
+
+
+/* =========================================================
+   LANGUAGE CHANGE
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        updateAIInterface();
+
+
+        const selector =
+            document.getElementById(
+                "websiteLanguage"
+            );
+
+
+        if (selector) {
+
+            selector.addEventListener(
+                "change",
+                function() {
+
+                    stopOutputVoice();
+
+                    stopAISpeech();
+
+                    updateAIInterface();
+
+                }
+            );
+
+        }
+
+
+        const input =
+            document.getElementById(
+                "aiInput"
+            );
+
+
+        if (input) {
+
+            input.addEventListener(
+                "keydown",
+                function(event) {
+
+                    if (
+                        event.key === "Enter" &&
+                        !event.shiftKey
+                    ) {
+
+                        event.preventDefault();
+
+                        sendAI();
+
+                    }
+
+                }
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
